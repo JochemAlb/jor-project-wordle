@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput() {
+function GuessInput({ handleGuesses }) {
   const LENGTH = 5;
   const [guess, setGuess] = React.useState("");
 
@@ -9,7 +9,14 @@ function GuessInput() {
       className="guess-input-wrapper"
       onSubmit={(event) => {
         event.preventDefault();
-        console.log({ guess: guess.toUpperCase() });
+
+        const nextGuess = {
+          label: guess.toUpperCase(),
+          id: crypto.randomUUID(),
+        };
+
+        console.log({ guess: nextGuess });
+        handleGuesses(nextGuess);
         setGuess("");
       }}
     >
