@@ -14,10 +14,12 @@ function Game() {
   const [guesses, setGuesses] = React.useState([]);
 
   function handleGuesses(guess) {
-    const nextGuesses = [...guesses, guess];
-    console.log(guess);
-    console.log("list", nextGuesses);
-    setGuesses(nextGuesses);
+    const nextGuess = {
+      label: guess.toUpperCase(),
+      id: crypto.randomUUID(),
+    };
+    console.log({ guess: nextGuess });
+    setGuesses([...guesses, nextGuess]);
   }
 
   return (

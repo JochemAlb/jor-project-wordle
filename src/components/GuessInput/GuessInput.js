@@ -10,13 +10,7 @@ function GuessInput({ handleGuesses }) {
       onSubmit={(event) => {
         event.preventDefault();
 
-        const nextGuess = {
-          label: guess.toUpperCase(),
-          id: crypto.randomUUID(),
-        };
-
-        console.log({ guess: nextGuess });
-        handleGuesses(nextGuess);
+        handleGuesses(guess);
         setGuess("");
       }}
     >
