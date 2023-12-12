@@ -1,8 +1,7 @@
 import React from "react";
 
 function GuessInput() {
-  const MIN_LENGTH = 5;
-  const MAX_LENGTH = 5;
+  const LENGTH = 5;
   const [guess, setGuess] = React.useState("");
 
   return (
@@ -18,9 +17,10 @@ function GuessInput() {
       <input
         id="guess-input"
         type="text"
-        pattern={`[a-zA-Z]{${MIN_LENGTH},${MAX_LENGTH}}`}
+        pattern={`[a-zA-Z]{${LENGTH}}`}
         required
-        maxLength={MAX_LENGTH}
+        maxLength={LENGTH}
+        title="5 letter word"
         value={guess}
         onChange={(event) => setGuess(event.target.value)}
       />
