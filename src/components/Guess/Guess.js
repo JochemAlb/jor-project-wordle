@@ -4,9 +4,9 @@ import { range } from "../../utils";
 function Guess({ guess }) {
   return (
     <p className="guess">
-      {range(0, 5).map((value) => (
-        <span className="cell" key={value}>
-          {guess ? guess.label[value] : ""}
+      {range(5).map((num) => (
+        <span className="cell" key={num}>
+          {guess ? guess.label[num] : ""}
         </span>
       ))}
     </p>
